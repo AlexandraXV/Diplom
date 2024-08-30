@@ -4,7 +4,6 @@ from selenium.webdriver.common.keys import Keys
 import allure
 
 
-
 class ui:
 
     def __init__(self, driver):
@@ -77,7 +76,8 @@ class ui:
         ).send_keys(value, Keys.ENTER)
         self.driver.find_element(
             By.XPATH, '//*[@id="block_left_pad"]/div/div[2]/div/div[1]/ul/li[2]/a').click()
-        self.driver.find_element(By.XPATH, '//*[@id="tr_first_t61544"]/table[2]/tbody/tr[1]/td/table/tbody/tr/td/div/div/div').click()
+        self.driver.find_element(
+            By.XPATH, '//*[@id="tr_first_t61544"]/table[2]/tbody/tr[1]/td/table/tbody/tr/td/div/div/div').click()
 
     @allure.step("Поиск слова Трейлеры")
     def find_header_trailer(self):
@@ -87,7 +87,8 @@ class ui:
     def filters(self, name):
         self.driver.find_element(
             By.CSS_SELECTOR, '.styles_advancedSearchIcon__Zxjax').click()
-        self.driver.find_element(By.CSS_SELECTOR, '#find_people').send_keys(name)
+        self.driver.find_element(
+            By.CSS_SELECTOR, '#find_people').send_keys(name)
         self.driver.find_element(
             By.CSS_SELECTOR, '.el_8.submit.nice_button').click()
 

@@ -1,7 +1,5 @@
 from ui import ui
-
 from selenium import webdriver
-from time import sleep
 
 import allure
 
@@ -16,7 +14,7 @@ def test_find_movie():
     ui_page.find_movie("The Crow")
     result = ui_page.find_header_movie()
     assert result == 'Ворон'
-    driver.quit()
+
 
 @allure.title("Кнопка Телеканалы")
 @allure.description("Тестирование кнопки Телеканалы. Проверка функциональности кнопок внутри вкладки.")
@@ -25,6 +23,7 @@ def test_channels():
     ui_page.channels()
     result = ui_page.find_header_channels()
     assert result == "Смотреть каналы"
+
 
 @allure.title("Возрат на главную страницу")
 @allure.description("Переход на вкладку, нажатие на кнопку Кинопоиск для возврата на главную страницу.")
@@ -37,6 +36,7 @@ def test_back_main():
     Кинопоиск на сайт сделан в картинке, а не написан.
     """
     assert result == ""
+
 
 @allure.title("Просмотр трейлера")
 @allure.description("Поиск фильма через поисковик, нажатие на кнопку Трейлер.")
