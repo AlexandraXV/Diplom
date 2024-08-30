@@ -1,4 +1,4 @@
-from pages.api import API
+from api import API
 
 import allure
 
@@ -53,6 +53,7 @@ def test_find_actor():
     actor_name = actor_data['enName']
     assert actor.status_code == 200
     assert actor_name == 'Ben Affleck'
+
 
 @allure.title("Поиск режиссера")
 @allure.description("Поиск режиссера по имени, также можно указать фамилию. Проверка успешного запроса и совпадения по поиску.")
